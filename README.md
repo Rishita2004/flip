@@ -4,7 +4,7 @@
 This repository contains the implementation for classifying fruits as fresh or rotten using Deep Learning techniques. We initially established a baseline performance with a Convolutional Neural Network (CNN) and subsequently improved accuracy through Transfer Learning with EfficientNetB0.
 
 ## Dataset
-We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggle, which comprises **13,599 images** of apples, bananas, and oranges categorized into fresh and rotten classes.
+We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggle (https://www.kaggle.com/datasets/sriramr/fruits-fresh-and-rotten-for-classification), which comprises **13,599 images** of apples, bananas, and oranges categorized into fresh and rotten classes.
 
 ### Dataset Structure
 | Dataset | Directories      | Files |
