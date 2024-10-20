@@ -1,5 +1,5 @@
 # Futuristic Grid
-# Fresh & Rotten Fruits Classification
+- https://colab.research.google.com/drive/13L5c-T9yYxdGDVl3eD_fDUil7RvijYZO?usp=sharing
 
 ## Overview
 This repository contains the implementation for classifying fruits as fresh or rotten using Deep Learning techniques. We initially established a baseline performance with a Convolutional Neural Network (CNN) and subsequently improved accuracy through Transfer Learning with EfficientNetB0.
