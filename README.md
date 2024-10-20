@@ -87,3 +87,7 @@ elif classes == 1:
     prediction = 'rotten orange'
 
 print(prediction)
+
+## Future Enhancements
+- We aim to extend this solution into a web application integrated with IoT devices to enable real-time detection of fruit freshness for practical applications in grocery stores or warehouses.
+- We also aim to extend it to the different varieties of fruits and vegetables.
