@@ -86,8 +86,12 @@ elif classes == 1:
 elif classes == 1:
     prediction = 'rotten orange'
 
-print(prediction)
+print(prediction)         
+```
 
 ## Future Enhancements
-- We aim to extend this solution into a web application integrated with IoT devices to enable real-time detection of fruit freshness for practical applications in grocery stores or warehouses.
-- We also aim to extend it to the different varieties of fruits and vegetables.
+We plan to extend this solution into a web application integrated with IoT devices to enable real-time detection of fruit freshness for practical applications in grocery stores or warehouses. Additional enhancements may include:
+- **Implementing a user-friendly interface** for easy interaction.
+- **Adding support for more fruit and vegetable types** to broaden the classification capabilities.
+- **Incorporating a feedback mechanism** to improve model accuracy over time.
+- **Developing mobile applications** for on-the-go freshness checks.
