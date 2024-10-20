@@ -45,31 +45,37 @@ We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggl
 
 ## Code for Prediction
 ```python
-# Example Usage
-# To make a prediction using the trained EfficientNet-B0 model:
-
-import torch
-from PIL import Image
-
-# Load the pre-trained model and ensure it's in evaluation mode
-model.load_state_dict(torch.load("/path_to_model/effnetb0_freshvisionv0_10_epochs.pt", map_location="cpu"))
-model.eval()
-
-# Define function to predict class
 def predict_image(image_path):
+    model.eval()  # Set the model to evaluation mode
+
+    # Open the image
     img = Image.open(image_path).convert("RGB")
-    transformed_img = manual_transform(img).unsqueeze(0).to(device)  # Add batch dimension
+
+    # Apply the transformations
+    transformed = manual_transform(img).to(device)
+
+    # Inference
     with torch.inference_mode():
-        logits = model(transformed_img)
-        probs = torch.softmax(logits, dim=-1)
-        predicted_class = class_names[probs.argmax().item()]
-        confidence = probs.max().item()
+        logits = model(transformed.unsqueeze(dim=0))  # Add batch dimension
+        pred = torch.softmax(logits, dim=-1)
 
-    return f"Prediction: {predicted_class} | Confidence: {confidence:.3f}"
+    # Get the prediction and confidence
+    predicted_class = class_names[pred.argmax(dim=-1).item()]
+    confidence = pred.max().item()
 
-# Example image path
-image_path = "/path_to_image/banana.jpg"
-print(predict_image(image_path))     
+    return predicted_class, confidence, img
+
+# Example of running inference on a single image
+image_path = "/content/PATH_TO_YOUR_IMAGE.jpg"  # Provide the path to the image here
+
+# Get prediction and the image
+predicted_class, confidence, img = predict_image(image_path)
+
+# Plotting the image with prediction
+plt.imshow(img)
+plt.title(f"Prediction: {predicted_class} | Confidence: {confidence:.3f}")
+plt.axis('off')  # Hide the axis
+plt.show()   
 ```
 
 ## Future Enhancements
