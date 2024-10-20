@@ -1,10 +1,12 @@
 # Futuristic Grid
 
 ## Overview
-This repository contains the implementation for classifying fruits as fresh or rotten using Deep Learning techniques. We initially established a baseline performance with a Convolutional Neural Network (CNN) and subsequently improved accuracy through Transfer Learning with EfficientNetB0. Along with the implementation of OCR to extract details from product image data that were web scraped from the Flipkart Supermart website. The technologies that were used for OCR implementation are feature extraction techniques that have edge and contour detection and were used to analyse product packaging, and object detection, which involved a pretrained model (YOLO 5) and was used to detect product shape and text from images. Then OCR to extract and recognize text from product image, focusing on brand name, product name, and pack size. 
+This repository contains the implementation for classifying fruits as fresh or rotten using Deep Learning techniques. We initially established a baseline performance with a Convolutional Neural Network (CNN) and subsequently improved accuracy through Transfer Learning with EfficientNetB0. 
+Along with the implementation of OCR to extract details from product image data that were web scraped from the Flipkart Supermart website. The technologies that were used for OCR implementation are feature extraction techniques that have edge and contour detection and were used to analyse product packaging, and object detection, which involved a pretrained model (YOLO 5) and was used to detect product shape and text from images. Then OCR to extract and recognize text from product image, focusing on brand name, product name, and pack size. 
 
 ## Dataset
 We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggle (https://www.kaggle.com/datasets/sriramr/fruits-fresh-and-rotten-for-classification), which comprises **13,599 images** of apples, bananas, and oranges categorized into fresh and rotten classes.
+
 Web scraped data from Flipkart Supermart Website for OCR implementation (https://drive.google.com/drive/folders/1J3tSC5bZz6Sj6dxskvIrpn5WogmDLWQH?usp=sharing) .
 
 ### Dataset Structure
