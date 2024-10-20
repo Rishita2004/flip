@@ -45,48 +45,31 @@ We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggl
 
 ## Code for Prediction
 ```python
-from keras.preprocessing.image import img_to_array, load_img
-import random, os
+# Example Usage
+# To make a prediction using the trained EfficientNet-B0 model:
 
-# Directories for testing
-names = [fresh_apples_test_dir, fresh_banana_test_dir, fresh_oranges_test_dir,
-         rotten_apples_test_dir, rotten_banana_test_dir, rotten_oranges_test_dir]
+import torch
+from PIL import Image
 
-# Randomly selecting an image
-name_rand = random.choice(names)
-filename = os.listdir(name_rand)
-sample = random.choice(filename)
-fn = os.path.join(name_rand, sample)
+# Load the pre-trained model and ensure it's in evaluation mode
+model.load_state_dict(torch.load("/path_to_model/effnetb0_freshvisionv0_10_epochs.pt", map_location="cpu"))
+model.eval()
 
-# Load and display the image
-img = load_img(fn, target_size=(150, 150))
-plt.imshow(img)
+# Define function to predict class
+def predict_image(image_path):
+    img = Image.open(image_path).convert("RGB")
+    transformed_img = manual_transform(img).unsqueeze(0).to(device)  # Add batch dimension
+    with torch.inference_mode():
+        logits = model(transformed_img)
+        probs = torch.softmax(logits, dim=-1)
+        predicted_class = class_names[probs.argmax().item()]
+        confidence = probs.max().item()
 
-# Preprocess for prediction
-x = img_to_array(img)
-x = np.expand_dims(x, axis=0)
-images = np.vstack([x])
+    return f"Prediction: {predicted_class} | Confidence: {confidence:.3f}"
 
-# Predict the class
-classes = model.predict(images, batch_size=10)
-print(classes)
-
-# Interpret the prediction
-prediction = ''
-if classes == 1:
-    prediction = 'fresh apple'
-elif classes == 1:
-    prediction = 'fresh banana'
-elif classes == 1:
-    prediction = 'fresh orange'
-elif classes == 1:
-    prediction = 'rotten apple'
-elif classes == 1:
-    prediction = 'rotten banana'
-elif classes == 1:
-    prediction = 'rotten orange'
-
-print(prediction)         
+# Example image path
+image_path = "/path_to_image/banana.jpg"
+print(predict_image(image_path))     
 ```
 
 ## Future Enhancements
