@@ -1,4 +1,4 @@
-# Futuristic Grid
+# SmartQC ( Quality Checking of Product using Smart Vision )
 
 ## Overview
 This repository contains the implementation for classifying fruits as fresh or rotten using Deep Learning techniques. We initially established a baseline performance with a Convolutional Neural Network (CNN) and subsequently improved accuracy through Transfer Learning with EfficientNetB0. 
