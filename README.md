@@ -10,8 +10,8 @@ We utilized the **Fruit Fresh and Rotten for Classification** dataset from Kaggl
 Web scraped data from Flipkart Supermart Website for OCR implementation (https://drive.google.com/drive/folders/1J3tSC5bZz6Sj6dxskvIrpn5WogmDLWQH?usp=sharing) .
 
 We create our own dataset to implement brand detection & expiry date extraction 
-1- Annotation of unlabelled image data using Roboflow 
-2- Execution of YOLOv8 to extract details such as BRAND NAME ,PRODUCT NAME , MRP , EXPIRY DATE 
+* Annotation of unlabelled image data using Roboflow .
+* Execution of YOLOv8 to extract details such as BRAND NAME ,PRODUCT NAME , MRP , EXPIRY DATE 
 (https://drive.google.com/drive/folders/1KL0Qvyof8BUAYXex1m3T-ldX-_QlZrYG?usp=sharing)
 
 ### Dataset Structure
